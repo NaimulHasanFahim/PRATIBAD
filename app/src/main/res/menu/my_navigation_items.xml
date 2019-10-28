@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/complainbox"
+        android:title="@string/cbox"
+        android:icon="@drawable/complaint">
+    </item>
+    <item
+        android:id="@+id/police"
+        android:title="@string/police"
+        android:icon="@drawable/police">
+    </item>
+    <item
+        android:id="@+id/graph"
+        android:title="@string/grap"
+        android:icon="@drawable/graph">
+    </item>
+
+    <item
+        android:id="@+id/addtrusted"
+        android:title="Add Trusted Friend"
+        android:icon="@drawable/graph">
+    </item>
+
+    <item android:title="@string/ot">
+        <menu>
+            <item
+                android:id="@+id/edit"
+                android:title="@string/edit"
+                android:icon="@drawable/edit">
+            </item>
+            <item
+                android:id="@+id/logmout"
+                android:title="@string/lmout"
+                android:icon="@drawable/logout">
+            </item>
+
+        </menu>
+    </item>
+</menu>

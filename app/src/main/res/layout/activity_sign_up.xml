@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/signuptoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="60dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:navigationIcon="@drawable/backic"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/creintol"
+        app:titleTextColor="@color/colorWhite" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginRight="166dp"
+        android:text="@string/crena"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="23dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/signemail"
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="219dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginRight="-1dp"
+        android:backgroundTint="@color/colorAccent"
+        android:focusableInTouchMode="true"
+        android:ems="10"
+        android:hint="@string/yous"
+        android:textColor="@color/colorPrimaryDark"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/colorIntxt" />
+
+    <EditText
+        android:id="@+id/signpassword"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:backgroundTint="@color/colorAccent"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:hint="@string/passs"
+        android:textColor="@color/colorPrimaryDark"
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorIntxt" />
+
+    <Button
+        android:id="@+id/signbutton"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/btn_round"
+        android:text="@string/crebtn"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <EditText
+        android:id="@+id/myname"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="470dp"
+        android:focusableInTouchMode="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorAccent"
+        android:ems="10"
+        android:hint="@string/nams"
+        android:inputType="text"
+        android:textColorHint="@color/colorIntxt" />
+
+</RelativeLayout>

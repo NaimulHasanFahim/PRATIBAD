@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MyProjectWork</string>
+    <string name="cbox">Complain Box</string>
+    <string name="police">Police Help</string>
+    <string name="grap">GraphData</string>
+    <string name="lmout">Logout</string>
+    <string name="Open">Helo</string>
+    <string name="Close">Gdkd</string>
+    <string name="edit">Edit Profile</string>
+    <string name="ot">Other</string>
+    <string name="youe">Your Email</string>
+    <string name="passs">Password</string>
+    <string name="logintol">Login</string>
+    <string name="creintol">Create Account</string>
+    <string name="logcap">LOGIN</string>
+    <string name="logintoly">Login to your account</string>
+    <string name="wel">Welcome to Anti Harassment App</string>
+    <string name="needacc">NEED A NEW ACCOUNT</string>
+    <string name="alr_h_ac">ALREADY HAVE A ACCOUNT</string>
+
+    <string name="cngimg">Chane Image</string>
+
+    <string name="yous">Email</string>
+    <string name="nams">Display Name</string>
+    <string name="crena">Create a New Account</string>
+    <string name="crebtn">CREATE ACCOUNT</string>
+    <string name="def">default</string>
+</resources>
