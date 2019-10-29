@@ -53,6 +53,13 @@ public class EditProfile_Activity extends AppCompatActivity {
 
 
     private StorageReference mystorage;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_edit_profile_);
+    }
+
+    /*
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +99,7 @@ public class EditProfile_Activity extends AppCompatActivity {
                 String edname = dataSnapshot.child("name").getValue().toString();
                 String  edimage= dataSnapshot.child("image").getValue().toString();
                 String edthimage = dataSnapshot.child("thumb_image").getValue().toString();
+                String chmessage = dataSnapshot.child("messages").getValue().toString();
 
                 sname.setText(edname);
 
@@ -116,13 +124,13 @@ public class EditProfile_Activity extends AppCompatActivity {
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(galleryIntent,"SELECT IMAGE"),GALLERY_PICK);
 
-                /*
-                // start picker to get image for cropping and then use the image in cropping activity
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(EditProfile_Activity.this);
 
-                 */
+                // start picker to get image for cropping and then use the image in cropping activity
+                //CropImage.activity()
+                  //      .setGuidelines(CropImageView.Guidelines.ON)
+                    //    .start(EditProfile_Activity.this);
+
+
             }
         });
 
@@ -203,5 +211,5 @@ public class EditProfile_Activity extends AppCompatActivity {
         }
         return randomStringBuilder.toString();
     }
-
+    */
 }

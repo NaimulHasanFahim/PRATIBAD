@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class StartActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button alredy,need;
+    private Button alredy,need,logadmn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +21,11 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         alredy = (Button) findViewById(R.id.alrd_acc);
         need = (Button) findViewById(R.id.need_acc);
+        logadmn = (Button) findViewById(R.id.admn);
 
         alredy.setOnClickListener(this);
         need.setOnClickListener(this);
+        logadmn.setOnClickListener(this);
 
     }
 
@@ -37,6 +39,11 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         if(view.getId()==R.id.need_acc){
             startActivity(new Intent(StartActivity.this,SignUpActivity.class ));
+            finish();
+        }
+
+        if(view.getId()==R.id.admn){
+            startActivity(new Intent(StartActivity.this,Admin_login_Activity.class ));
             finish();
         }
     }

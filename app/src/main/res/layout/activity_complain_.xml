@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Complain_Activity"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryBack">
+    android:background="@color/colorWhite">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/complaintoolbar"
@@ -19,4 +19,15 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:titleTextColor="@color/colorWhite"
         app:title="@string/cbox" />
+
+    <Button
+        android:id="@+id/buttonff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="47dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:text="Add new Complain" />
+
 </RelativeLayout>

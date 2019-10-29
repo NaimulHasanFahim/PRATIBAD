@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myprojectwork">
-
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission
+        android:name="android.permission.SEND_SMS"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Users_Activity"></activity>
+        <activity android:name=".Admin_MainActivity"></activity>
+        <activity android:name=".Admin_login_Activity" />
+        <activity android:name=".Users_Activity" />
         <activity android:name=".EditProfile_Activity" />
         <activity android:name=".Complain_Activity" />
         <activity android:name=".Police_Activity" />
@@ -26,10 +29,10 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

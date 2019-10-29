@@ -45,7 +45,6 @@ dependencies {
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
-
     implementation 'androidx.recyclerview:recyclerview:1.0.0-beta01'
     implementation 'com.google.firebase:firebase-crash:16.2.1'
 }

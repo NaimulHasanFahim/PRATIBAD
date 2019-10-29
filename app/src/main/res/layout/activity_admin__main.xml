@@ -7,18 +7,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:id="@+id/drw"
+    tools:context=".Admin_MainActivity"
+    android:id="@+id/drwadmin"
     android:background="@color/colorWhite"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".Admin_MainActivity">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbaradmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
@@ -27,27 +27,14 @@
             app:titleTextColor="@color/colorWhite"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="139dp"
-            android:layout_height="114dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="122dp"
-            android:layout_marginRight="122dp"
-            android:layout_marginBottom="209dp"
-            android:background="@drawable/btn_round"
-            android:text="Give Alert" />
     </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/nav_viewadmin"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/navigation_header"
-        app:menu="@menu/my_navigation_items" />
+        app:headerLayout="@layout/navigation_header_admin"
+        app:menu="@menu/admin_navigation" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
 
