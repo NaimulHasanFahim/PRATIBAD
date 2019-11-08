@@ -6,7 +6,6 @@
     android:background="@color/colorWhite">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/compboxtoolbar."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -14,7 +13,6 @@
         android:theme="?attr/actionBarTheme" />
 
     <EditText
-        android:id="@+id/comtitle"
         android:layout_width="385dp"
         android:layout_height="37dp"
         android:layout_alignParentTop="true"
@@ -33,7 +31,6 @@
         android:textColorHint="@color/colorIntxt" />
 
     <EditText
-        android:id="@+id/compp"
         android:layout_width="383dp"
         android:layout_height="149dp"
         android:layout_alignParentTop="true"

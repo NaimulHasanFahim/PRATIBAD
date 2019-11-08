@@ -18,7 +18,6 @@
         tools:context=".Admin_MainActivity">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbaradmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"

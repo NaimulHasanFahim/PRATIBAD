@@ -14,7 +14,6 @@
     <string name="creintol">Create Account</string>
     <string name="logcap">LOGIN</string>
     <string name="logintoly">Login to your account</string>
-    <string name="wel">Welcome to Anti Harassment App</string>
     <string name="needacc">NEED A NEW ACCOUNT</string>
     <string name="alr_h_ac">ALREADY HAVE A ACCOUNT</string>
 
@@ -24,5 +23,4 @@
     <string name="nams">Display Name</string>
     <string name="crena">Create a New Account</string>
     <string name="crebtn">CREATE ACCOUNT</string>
-    <string name="def">default</string>
 </resources>

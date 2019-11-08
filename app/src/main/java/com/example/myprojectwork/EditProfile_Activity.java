@@ -5,18 +5,27 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Gallery;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,55 +38,48 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
-import java.util.Random;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EditProfile_Activity extends AppCompatActivity {
 
+
+    private Uri filePath;
+
     private Toolbar editprotool;
-    private DatabaseReference editdatabsref;
-    private FirebaseUser editfirus;
-
-    private TextView sname;
-    private CircleImageView simage;
-
-    private ProgressDialog mProgressDialog;
-
-
     private Button changeimg;
+    private TextView userName;
+    private CircleImageView userProfileImage;
+    private String currentUserId;
+    private FirebaseAuth mAuth;
+    private DatabaseReference RootRef;
+    private static final int GalleryPick = 1;
+    private StorageReference UserProfileImagesRef;
 
-    private  static  final int GALLERY_PICK=1;
+    private Uri myimagruri;
 
 
-    private StorageReference mystorage;
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile_);
-    }
-
-    /*
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile_);
+        //logd("On Create");
+
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
+        currentUserId = mAuth.getCurrentUser().getUid();
+        RootRef = FirebaseDatabase.getInstance().getReference();
+        UserProfileImagesRef = FirebaseStorage.getInstance().getReference().child("Profile_Images");
+
 
         editprotool = (Toolbar) findViewById(R.id.toolbaredit);
 
-        sname =(TextView) findViewById(R.id.editnametxt);
-        simage =(CircleImageView) findViewById(R.id.imgespro);
-
-        changeimg = (Button) findViewById(R.id.changeimagebtn);
-
-        mystorage = FirebaseStorage.getInstance().getReference();
-        editfirus = FirebaseAuth.getInstance().getCurrentUser();
-
         setSupportActionBar(editprotool);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         editprotool.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,25 +88,50 @@ public class EditProfile_Activity extends AppCompatActivity {
                 finish();
             }
         });
+        InitializeFields();
 
 
-        String eduid = editfirus.getUid();
-        editdatabsref = FirebaseDatabase.getInstance().getReference().child("Users").child(eduid);
-        editdatabsref .keepSynced(true);
+        changeimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        editdatabsref.addValueEventListener(new ValueEventListener() {
+                logd("Inside Change Image");Intent galleryIntent = new Intent();
+                chooseImage();
+                //uploadImage();
+            }
+        });
+
+        RetrieveUserInfo();
+
+
+    }
+
+    private void chooseImage() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select Picture"),GalleryPick);
+    }
+
+    private void RetrieveUserInfo() {
+       // logd("Inside Retrive User");
+
+        RootRef.child("Users").child(currentUserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String edname = dataSnapshot.child("name").getValue().toString();
-                String  edimage= dataSnapshot.child("image").getValue().toString();
-                String edthimage = dataSnapshot.child("thumb_image").getValue().toString();
-                String chmessage = dataSnapshot.child("messages").getValue().toString();
+                String retrieveUserName = dataSnapshot.child("name").getValue().toString();
+                String retrieveProfileImage = dataSnapshot.child("image").getValue().toString();
+                logd(retrieveProfileImage);
+                final StorageReference reff = UserProfileImagesRef.child(currentUserId+".jpg");
 
-                sname.setText(edname);
 
-                Picasso.get().load("edimage").into(simage);
-                Picasso.get().setLoggingEnabled(true);
+                ///Glide.with(EditProfile_Activity.this)
+                   ///     .load(reff)
+                      //  .into(userProfileImage);
+
+                userName.setText(retrieveUserName);
+                Picasso.get().load(retrieveProfileImage).into(userProfileImage);
             }
 
             @Override
@@ -113,103 +140,87 @@ public class EditProfile_Activity extends AppCompatActivity {
             }
         });
 
-        changeimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Toast.makeText(EditProfile_Activity.this,"Chanege Image.",Toast.LENGTH_SHORT).show();
-
-                Intent galleryIntent = new Intent();
-                galleryIntent.setType("image/*");
-                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(galleryIntent,"SELECT IMAGE"),GALLERY_PICK);
-
-
-                // start picker to get image for cropping and then use the image in cropping activity
-                //CropImage.activity()
-                  //      .setGuidelines(CropImageView.Guidelines.ON)
-                    //    .start(EditProfile_Activity.this);
-
-
-            }
-        });
-
 
     }
+
+
+
+    private void InitializeFields() {
+        //logd("Inside Initialize Field");
+        userName =(TextView) findViewById(R.id.editnametxt);
+        userProfileImage = (CircleImageView) findViewById(R.id.imgespro);
+        changeimg =(Button) findViewById(R.id.changebutton);
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == GALLERY_PICK && resultCode == RESULT_OK ){
+        //logd("Inside On Activity Resul");
 
-            Uri imageUri = data.getData();
-            CropImage.activity(imageUri).setAspectRatio(1,1)
-            .setMinCropWindowSize(500, 500).start(this);
-        }
 
-        if(requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+        if(requestCode == GalleryPick && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            filePath = data.getData();
+            try{
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(),filePath);
 
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                byte[] dataa = baos.toByteArray();
 
-            if(resultCode==RESULT_OK){
+                final StorageReference reff = UserProfileImagesRef.child(currentUserId+".jpg");
+                UploadTask uploadTask = reff.putBytes(dataa);
 
-                mProgressDialog = new ProgressDialog(EditProfile_Activity.this);
-                mProgressDialog.setTitle("Uploading Image...");
-                mProgressDialog.setMessage("Please wait while we upload and process the image.");
-                mProgressDialog.setCanceledOnTouchOutside(false);
-                mProgressDialog.show();
 
-                Uri resultUri = result.getUri();
-                String eduid11 = editfirus.getUid();
 
-                StorageReference filepath = mystorage.child("Profile_Images").child(eduid11+".jpg");
 
-                filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+
+                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-
-                        if(task.isSuccessful()){
-                            final String download_url =  task.getResult().getMetadata().getReference().getDownloadUrl().toString();
-
-                            editdatabsref.child("image").setValue(download_url).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    mProgressDialog.dismiss();
-                                }
-                            });
-
-
-                            Toast.makeText(EditProfile_Activity.this,"Working.",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            mProgressDialog.hide();
-                            Toast.makeText(EditProfile_Activity.this,"Error in Uploading !.",Toast.LENGTH_SHORT).show();
+                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                        if (!task.isSuccessful()) {
+                            throw task.getException();
                         }
 
+                        // Continue with the task to get the download URL
+
+                        return reff.getDownloadUrl();
+                    }
+                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if (task.isSuccessful()) {
+                            Uri downloadUri = task.getResult();
+                            logd(""+downloadUri);
+                            RootRef.child("Users").child(currentUserId).child("image").setValue(downloadUri.toString());
+
+
+                        } else {
+                            // Handle failures
+                            // ...
+                        }
                     }
                 });
 
+                userProfileImage.setImageBitmap(bitmap);
             }
-            else if(requestCode==CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE){
-
-                Exception error = result.getError();
-
+            catch (IOException e) {
+                e.printStackTrace();
             }
-
         }
+
+
     }
 
-    public static String random() {
-        Random generator = new Random();
-        StringBuilder randomStringBuilder = new StringBuilder();
-        int randomLength = generator.nextInt(20);
-        char tempChar;
-        for (int i = 0; i < randomLength; i++){
-            tempChar = (char) (generator.nextInt(96) + 32);
-            randomStringBuilder.append(tempChar);
-        }
-        return randomStringBuilder.toString();
+
+    public void logd (String s)
+    {
+        AlertDialog.Builder mad=new AlertDialog.Builder(this);
+        mad.setMessage(s);
+        mad.show();
     }
-    */
+
+
 }

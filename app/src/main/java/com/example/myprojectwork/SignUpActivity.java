@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.HashMap;
 
@@ -31,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth mAuth;
     private ProgressDialog signprogress;
     private Toolbar signUptool;
+
 
     private DatabaseReference mDatabase;
 
@@ -106,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                                 HashMap<String,String> userMap = new HashMap<>();
 
                                 userMap.put("name",usernames);
-                                userMap.put("image","default");
+                                userMap.put("image","hello");
                                 userMap.put("thumb_image","default");
 
                                 mDatabase.setValue(userMap);

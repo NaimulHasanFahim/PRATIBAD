@@ -8,7 +8,6 @@
     android:background="@color/colorAccent">
 
     <ImageView
-        android:id="@+id/navhedimg"
         android:layout_width="180dp"
         android:layout_height="130dp"
         android:layout_marginTop="15dp"

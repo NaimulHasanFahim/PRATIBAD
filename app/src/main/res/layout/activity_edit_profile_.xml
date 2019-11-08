@@ -47,10 +47,10 @@
         android:layout_marginEnd="179dp"
         android:layout_marginRight="179dp"
         android:layout_marginBottom="343dp"
-        />
+        android:text="Display Name" />
 
     <Button
-        android:id="@+id/changeimagebtn"
+        android:id="@+id/changebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
