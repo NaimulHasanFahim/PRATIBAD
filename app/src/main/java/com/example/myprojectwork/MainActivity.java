@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(id==R.id.addtrusted){
-                    //startActivity(new Intent(MainActivity.this,Users_Activity.class ));
-                    //finish();
+                    startActivity(new Intent(MainActivity.this,Users_Activity.class ));
+                    finish();
                     Toast.makeText(MainActivity.this,"User Clicked On the Add trusted friend button.",Toast.LENGTH_SHORT).show();
 
                 }

@@ -23,4 +23,5 @@
     <string name="nams">Display Name</string>
     <string name="crena">Create a New Account</string>
     <string name="crebtn">CREATE ACCOUNT</string>
+    <string name="textviewqq">TextView</string>
 </resources>
