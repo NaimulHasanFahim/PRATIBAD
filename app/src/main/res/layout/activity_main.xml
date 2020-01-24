@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/drw"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@drawable/background">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="60dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Home"
+            app:titleTextColor="@color/colorWhite" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="354dp"
+            android:layout_height="116dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="82dp"
+            android:layout_marginEnd="33dp"
+            android:background="@drawable/rectangle" />
+
+        <TextView
+            android:id="@+id/username1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="90dp"
+            android:text="Naimul Hasan" />
+
+        <TextView
+            android:id="@+id/compgiven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="119dp"
+            android:text="Complaint Given : " />
+
+        <TextView
+            android:id="@+id/actaken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="142dp"
+            android:text="Action Taken : " />
+
+        <TextView
+            android:id="@+id/lastcompstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="165dp"
+            android:text="Last Complaint Status :" />
+
+        <Button
+            android:id="@+id/givencomp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginBottom="274dp"
+            android:background="@drawable/cbb" />
+
+        <Button
+            android:id="@+id/policehelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="221dp"
+            android:layout_marginBottom="274dp"
+            android:background="@drawable/policechobi" />
+
+        <Button
+            android:id="@+id/lawhelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="61dp"
+            android:layout_marginBottom="140dp"
+            android:background="@drawable/lawxd" />
+
+        <Button
+            android:id="@+id/chatsuser"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="234dp"
+            android:layout_marginBottom="137dp"
+            android:background="@mipmap/ic_imgconvo" />
+
+        <Button
+            android:id="@+id/alertbutton"
+            android:layout_width="119dp"
+            android:layout_height="110dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="124dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/buun" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="54dp"
+            android:layout_marginBottom="248dp"
+            android:background="@drawable/complaint" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="224dp"
+            android:layout_marginBottom="247dp"
+            android:background="@drawable/police_help" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="78dp"
+            android:layout_marginBottom="118dp"
+            android:background="@drawable/laws" />
+
+        <TextView
+            android:id="@+id/textviewalert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="160dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/emergency" />
+
+        <TextView
+            android:id="@+id/textViewchats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="257dp"
+            android:layout_marginBottom="119dp"
+            android:background="@drawable/chatstext" />
+
+    </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/my_navigation_items" >
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

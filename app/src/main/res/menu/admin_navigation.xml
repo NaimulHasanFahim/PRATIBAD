@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/policeadmin"
+        android:title="@string/police"
+        android:icon="@drawable/police">
+    </item>
+
+    <item
+        android:id="@+id/lawadmin"
+        android:title="Law"
+        android:icon="@drawable/complaint">
+    </item>
+
+
+
+
+
+
+    <item android:title="@string/ot">
+        <menu>
+
+            <item
+                android:id="@+id/editproadmin"
+                android:title="@string/edit"
+                android:icon="@drawable/logout">
+            </item>
+            <item
+                android:id="@+id/logmoutadmin"
+                android:title="@string/lmout"
+                android:icon="@drawable/logout">
+            </item>
+
+        </menu>
+    </item>
+</menu>

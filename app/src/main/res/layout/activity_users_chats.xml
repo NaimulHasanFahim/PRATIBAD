@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UsersChatsActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/userchatstoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="60dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:navigationIcon="@drawable/backic"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/cbox" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/UserChatrecycle_view_chat"
+        android:layout_width="match_parent"
+        android:layout_height="599dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp" />
+
+</RelativeLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfile_Activity"
+    android:orientation="vertical"
+    >
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbaredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="60dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:navigationIcon="@drawable/backic"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/edit"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgespro"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginRight="139dp"
+        android:src="@drawable/defaultimgpro" />
+
+
+    <EditText
+        android:id="@+id/editnametxt"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="262dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="470dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:hint="User name"
+        android:inputType="text"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorIntxt" />
+
+    <Button
+        android:id="@+id/changebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="479dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginRight="-3dp"
+        android:background="@drawable/recbutton"
+        android:text="@string/cngimg" />
+
+    <EditText
+        android:id="@+id/myphone"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="470dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:hint="Phone"
+        android:inputType="text"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorIntxt" />
+
+    <EditText
+        android:id="@+id/myaddress"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="406dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="470dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:hint="Address"
+        android:inputType="text"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorIntxt" />
+
+    <Button
+        android:id="@+id/buttonupdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="556dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/recbutton"
+        android:text="Update Profile"
+        android:textColor="@color/colorWhite" />
+
+
+</RelativeLayout>

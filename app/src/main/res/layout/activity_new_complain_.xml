@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".New_complain_Activity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/new_colm_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="60dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:navigationIcon="@drawable/backic"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="New Complaint"
+        app:titleTextColor="@color/colorWhite" />
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="508dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="91dp"
+        android:background="#fff"
+        android:padding="5dp">
+
+
+        <RadioGroup
+            android:id="@+id/radioid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioproctor"
+                android:layout_width="91dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Proctor" />
+
+            <RadioButton
+                android:id="@+id/radioac"
+                android:layout_width="155dp"
+                android:layout_height="47dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="101dp"
+                android:layout_marginEnd="239dp"
+                android:text="Anti-harassment cell"
+                android:translationY="-40dp" />
+
+            <RadioButton
+                android:id="@+id/radiovc"
+                android:layout_width="158dp"
+                android:layout_height="43dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="101dp"
+                android:layout_marginEnd="239dp"
+                android:text="Vice chancellor"
+                android:translationY="-20dp" />
+
+            <RadioButton
+                android:id="@+id/radioadviser"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="101dp"
+                android:layout_marginEnd="239dp"
+                android:text="Adviser"
+                android:translationX="-90dp"
+                android:translationY="-60dp" />
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/mycomplaint_msg"
+        android:layout_width="341dp"
+        android:layout_height="78dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toLeftOf="@+id/btn_send"
+        android:background="@android:color/transparent"
+        android:hint="Submit Complain . . ." />
+
+    <ImageButton
+        android:id="@+id/subbutton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="340dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_action_send" />
+
+
+</RelativeLayout>

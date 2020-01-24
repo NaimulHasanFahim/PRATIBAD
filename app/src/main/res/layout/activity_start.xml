@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".StartActivity">
+
+    <TextView
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:text="Welcome to"
+        android:textColor="@color/colorWhite"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationX="100sp"
+        android:translationY="150sp" />
+
+    <TextView
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:text="Anti Harassment"
+        android:textColor="@color/colorWhite"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationX="-220sp"
+        android:translationY="200sp" />
+
+    <TextView
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:text="App"
+        android:textColor="@color/colorWhite"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:translationX="-450sp"
+        android:translationY="250sp" />
+
+
+    <Button
+        android:id="@+id/need_acc"
+        android:layout_width="164dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
+
+        android:background="@drawable/newback"
+        android:gravity="center"
+        android:text="@string/needacc"
+        android:textColor="@color/colorPrimary"
+        android:translationX="-800sp"
+        android:translationY="40sp" />
+
+    <Button
+        android:id="@+id/alrd_acc"
+        android:layout_width="198dp"
+        android:layout_height="31dp"
+        android:background="@drawable/btn_round"
+        android:gravity="center"
+        android:text="@string/alr_h_ac"
+        android:translationX="-1100sp"
+        android:translationY="350sp" />
+
+    <Button
+        android:id="@+id/admn"
+        android:layout_width="181dp"
+        android:layout_height="28dp"
+        android:background="@drawable/btn_round"
+        android:gravity="center"
+        android:text="Login as a Admin"
+        android:translationX="-1300sp"
+        android:translationY="500sp" />
+
+</LinearLayout>

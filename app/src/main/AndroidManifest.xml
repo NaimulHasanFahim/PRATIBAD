@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myprojectwork">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:noHistory="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".UserLawActivity"></activity>
+        <activity android:name=".MessageActivityAdmin" />
+        <activity android:name=".Admin_Police_Activity" />
+        <activity android:name=".AdminComplainLoadActivity" />
+        <activity android:name=".ComplainLoadActivity" />
+        <activity android:name=".UsersChatsActivity" />
+        <activity
+            android:name=".New_complain_Activity"
+            android:parentActivityName=".Complain_Activity" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".GalleryActivity" />
+        <activity android:name=".Users_Activity" />
+        <activity android:name=".Admin_MainActivity" />
+        <activity android:name=".Admin_login_Activity" />
+        <activity
+            android:name=".EditProfile_Activity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Complain_Activity" />
+        <activity android:name=".Police_Activity" />
+        <activity android:name=".StartActivity" />
+        <activity
+            android:name=".SignUpActivity"
+            android:parentActivityName=".StartActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".StartActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+    </application>
+
+</manifest>

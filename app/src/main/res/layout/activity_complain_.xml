@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Complain_Activity"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/complaintoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="60dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:navigationIcon="@drawable/backic"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/cbox" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_chat"
+        android:layout_width="match_parent"
+        android:layout_height="599dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp" />
+
+    <Button
+        android:id="@+id/buttonff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/recbutton"
+        android:text="Add new Complain"
+        android:textColor="@color/colorWhite" />
+
+</RelativeLayout>
