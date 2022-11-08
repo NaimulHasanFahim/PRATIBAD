@@ -101,7 +101,7 @@ public class UsersChatsActivity extends AppCompatActivity {
 
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User user = snapshot.getValue(User.class);
-                   logd(user.getUsername());
+                   ///logd(user.getUsername());
                     userchatstust.add(user);
                 }
             }
@@ -118,7 +118,7 @@ public class UsersChatsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 userchatUserList.clear();
-                logd("Inside the loop");
+                //logd("Inside the loop");
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     MessageId msgid = snapshot.getValue(MessageId.class);
 
@@ -134,13 +134,12 @@ public class UsersChatsActivity extends AppCompatActivity {
                 }
 
 
-                String ck = mCurrentUserId.toString();
+                String ck = mCurrentUserId;
 
                 for (String id:UserList){
 
                     if(countmap.get(id)==null&&!id.equals(ck)){
                         countmap.put(id,1);
-
                         for(User mmm : userchatstust){
                             if(mmm.getUid().equals(id)){
                                 System.out.println(mmm.getUid()+"  "+id);
@@ -148,8 +147,6 @@ public class UsersChatsActivity extends AppCompatActivity {
                             }
                         }
                     }
-
-
                 }
 
 

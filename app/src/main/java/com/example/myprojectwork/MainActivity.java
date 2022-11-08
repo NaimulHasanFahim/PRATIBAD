@@ -1,7 +1,6 @@
 package com.example.myprojectwork;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import androidx.annotation.Nullable;
 import android.os.PersistableBundle;
 import android.telephony.SmsManager;
 import android.view.MenuItem;
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        navhimg =(ImageView) findViewById(R.id.usernavimage);
+        // navhimg =(ImageView) findViewById(R.id.usernavimage);
         FirebaseUser currentUser11 = mAuth.getCurrentUser();
 
         /*
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         laststatus =(TextView) findViewById(id.lastcompstatus);
         actionNum =(TextView) findViewById(id.actaken);
 
-        Updatedata();
+        //Updatedata();
 
         complainbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,26 +167,26 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick(View v) {
-                    fetchlastLocation();
+            @Override
+            public void onClick(View v) {
+                fetchlastLocation();
 
-                    SmsManager smsManager = SmsManager.getDefault();
-                    try {if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
-                        smsManager.sendTextMessage("0183222641", null, "Please Help Me. My Location is Latitude = " + currentLocation.getLastLocation().getLatitude() + " && longtitude =  " + currentLocation.getLastLocation().getLongitude(), null, null);
-                        Toast.makeText(getApplicationContext(), "SMS SENT", Toast.LENGTH_SHORT).show();
-                    } else {
-                        request_permission();
+                SmsManager smsManager = SmsManager.getDefault();
+                try {if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
+                    smsManager.sendTextMessage("0183222641", null, "Please Help Me. My Location is Latitude = " + currentLocation.getLastLocation().getLatitude() + " && longtitude =  " + currentLocation.getLastLocation().getLongitude(), null, null);
+                    Toast.makeText(getApplicationContext(), "SMS SENT", Toast.LENGTH_SHORT).show();
+                } else {
+                    request_permission();
 
-                    }
-                    }catch (Exception e){
-                        Toast.makeText(getApplicationContext(), "turn on location", Toast.LENGTH_SHORT).show();
-                        fetchlastLocation();
-                    }
                 }
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "turn on location", Toast.LENGTH_SHORT).show();
+                    fetchlastLocation();
+                }
+            }
 
 
-            });
+        });
 
 
 
@@ -213,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         dl = (DrawerLayout) findViewById(id.drw);
+        logd(dl.toString());
         abdt = new ActionBarDrawerToggle(this,dl, string.Open, string.Close);
         abdt.setDrawerIndicatorEnabled(true);
         dl.addDrawerListener(abdt);
@@ -356,6 +357,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void Updatedata( ){
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+//        if(current_user== null) {
+//            setContentView(R.layout.activity_login);
+//            return;
+//        }
         String uid = current_user.getUid();
         DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("Complaints").child(uid);
         DatabaseReference mRef1 = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
