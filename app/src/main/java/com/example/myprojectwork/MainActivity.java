@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         laststatus =(TextView) findViewById(id.lastcompstatus);
         actionNum =(TextView) findViewById(id.actaken);
 
-        //Updatedata();
+        Updatedata();
 
         complainbutton.setOnClickListener(new View.OnClickListener() {
             @Override

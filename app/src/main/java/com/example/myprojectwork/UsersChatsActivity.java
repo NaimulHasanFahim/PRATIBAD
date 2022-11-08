@@ -142,7 +142,7 @@ public class UsersChatsActivity extends AppCompatActivity {
                         countmap.put(id,1);
                         for(User mmm : userchatstust){
                             if(mmm.getUid().equals(id)){
-                                System.out.println(mmm.getUid()+"  "+id);
+                             ///   System.out.println(mmm.getUid()+"  "+id);
                                 userchatUserList.add(mmm);
                             }
                         }
